@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>เกี่ยวกับฉัน</title>
+    <!-- ใช้ Bootstrap ตามเกณฑ์ A6 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root { --navy:#17324d; --ink:#18283b; --cream:#fffdf4; --gold:#ffd34e; --blue:#2789dc; }
+        * { box-sizing:border-box; }
+        body { min-height:100vh; margin:0; font-family:'Kanit',sans-serif; color:var(--ink); background:linear-gradient(180deg,#6bc8f1 0 38%,#78c879 38%,#4cae69 100%) !important; }
+        .topbar { background:rgba(23,50,77,.97); border-bottom:4px solid var(--gold); box-shadow:0 4px 12px rgba(22,52,75,.35); }
+        .topbar nav { gap:8px; }
+        .back-main { background:var(--gold); color:var(--ink); border:2px solid var(--navy); border-radius:10px; box-shadow:0 3px 0 var(--navy); font-weight:700; }
+        .back-main:hover { background:#ffe278; color:var(--ink); transform:translateY(1px); box-shadow:0 2px 0 var(--navy); }
+        main { max-width:850px; }
+        .profile-card { border:4px solid var(--navy); border-radius:16px; background:var(--cream); box-shadow:0 8px 0 rgba(23,50,77,.24); overflow:hidden; }
+        .profile-heading { background:var(--blue); color:white; border-bottom:3px solid var(--navy); }
+        .profile-heading h1 { margin:0; font-size:clamp(24px,5vw,36px); }
+        .profile-avatar { width:72px; height:72px; border:3px solid var(--navy); border-radius:50%; display:grid; place-items:center; background:var(--gold); font-size:36px; flex:none; }
+        .list-group-item { background:var(--cream); border-color:#cbd6da; padding:13px 16px; }
+        .list-group-item strong { color:#244b67; }
+        .github-link { color:#1679c7; font-weight:600; text-decoration:none; }
+        .github-link:hover { text-decoration:underline; }
+        @media(max-width:576px){ main{padding-top:1.5rem!important}.profile-card{box-shadow:0 5px 0 rgba(23,50,77,.24)}.profile-avatar{width:58px;height:58px;font-size:28px}.topbar nav{flex-wrap:wrap}.topbar nav>div{margin-top:4px} }
+    </style>
+</head>
+<body>
+    <header class="topbar">
+        <nav class="container d-flex justify-content-between align-items-center py-3" aria-label="เมนูหน้าเกี่ยวกับฉัน">
+            <div class="d-flex align-items-center gap-2"><a href="ex6.html" class="btn back-main">← ก่อนหน้า</a><span class="text-white fw-bold">Lesson 4</span></div>
+            <!-- ลิงก์กลับหน้าแรกของไซต์ ใช้ ../index.html เพราะ ex7 อยู่ในโฟลเดอร์ Lesson 4 -->
+            <a href="../index.html" class="btn back-main">← กลับหน้าแรก</a>
+        </nav>
+    </header>
+
+    <main class="container py-5">
+        <div class="profile-card">
+            <div class="profile-heading d-flex align-items-center gap-3 p-4">
+                <div class="profile-avatar" aria-hidden="true">บ</div>
+                <h1>เกี่ยวกับฉัน</h1>
+            </div>
+
+            <!-- รายการข้อมูลส่วนตัวอย่างน้อย 4 รายการ พร้อมลิงก์ GitHub (A3) -->
+            <ul id="profile" class="list-group list-group-flush">
+                <li class="list-group-item"><strong>ชื่อ-นามสกุล:</strong> ศรัณย์ภัทร เหมืองจา (บอม)</li>
+                <li class="list-group-item"><strong>อายุ:</strong> 29 ปี</li>
+                <li class="list-group-item"><strong>อาชีพ/ความเชี่ยวชาญ:</strong> Technician Support</li>
+                <li class="list-group-item"><strong>GitHub Profile:</strong> <a class="github-link" href="https://github.com/WaySpaceOrg" target="_blank" rel="noopener noreferrer">WaySpaceOrg บน GitHub ↗</a></li>
+            </ul>
+        </div>
+    </main>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ยืนยันความเข้าใจโจทย์</title>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root { --navy:#17324d; --ink:#18283b; --cream:#fffdf4; --gold:#ffd34e; --green:#24a66a; }
+        * { box-sizing:border-box; } body { margin:0; min-height:100vh; font-family:'Kanit',sans-serif; color:var(--ink); background:linear-gradient(180deg,#6bc8f1 0 38%,#78c879 38%,#4cae69 100%); }
+        .topbar { background:rgba(23,50,77,.97); border-bottom:4px solid var(--gold); } .nav { max-width:850px; margin:auto; padding:12px 18px; display:flex; justify-content:space-between; align-items:center; gap:8px; flex-wrap:wrap; }
+        .back { background:var(--gold); color:var(--ink); border:3px solid var(--navy); border-radius:10px; box-shadow:0 4px 0 var(--navy); padding:8px 12px; text-decoration:none; font-weight:700; }
+        main { max-width:850px; margin:38px auto; padding:0 18px; } h1 { color:white; text-shadow:3px 4px 0 var(--navy); }
+        ol { background:var(--cream); border:4px solid var(--navy); border-radius:16px; box-shadow:0 8px 0 rgba(23,50,77,.24); padding:18px 18px 18px 48px; } li { padding:8px 4px; border-bottom:1px dashed #b5c2c8; } li:last-child { border-bottom:0; } span { display:inline-block; margin-top:4px; background:#eff8ef; color:#166c45; border-radius:6px; padding:2px 8px; font-weight:600; }
+        @media(max-width:520px){ ol{padding-left:38px}.back{font-size:14px} }
+    </style>
+</head>
+<body>
+    <header class="topbar"><nav class="nav"><a class="back" href="ex4.html">← ก่อนหน้า</a><div><a class="back" href="../index.html">หน้าหลัก</a> <a class="back" href="ex6.html">ถัดไป →</a></div></nav></header>
+    <main>
+    <h1>ยืนยันความเข้าใจโจทย์ 4.5</h1>
+    <!-- อ่านใบสั่งงานในบทย่อย 4.5 แล้วพิมพ์คำตอบสั้นๆ ไว้ระหว่าง <span ...> กับ </span> -->
+    <ol>
+        <li>site map ต้องอยู่ในไฟล์ชื่ออะไร<br>ตอบ: <span id="a1">index.html</span></li>
+        <li>แท็ก nav ของ site map ต้องมี id อะไร<br>ตอบ: <span id="a2">sitemap</span></li>
+        <li>รายการซ้อนใน site map ใช้แท็กอะไร (พิมพ์แค่ชื่อแท็ก ไม่ต้องมี &lt; &gt; )<br>ตอบ: <span id="a3">ul</span></li>
+        <li>ใต้รายการหน้าแรกใน site map ต้องมีกี่รายการ (ตอบเป็นตัวเลข)<br>ตอบ: <span id="a4">4</span></li>
+        <li>หน้าเกี่ยวกับฉันต้องเป็นไฟล์ชื่ออะไร<br>ตอบ: <span id="a5">about.html</span></li>
+        <li>รายการข้อมูลส่วนตัวต้องอยู่ใน ul ที่มี id อะไร<br>ตอบ: <span id="a6">profile</span></li>
+        <li>ข้อมูลส่วนตัวต้องมีอย่างน้อยกี่รายการ (ตอบเป็นตัวเลข)<br>ตอบ: <span id="a7">4</span></li>
+        <li>ในไฟล์ about.html ลิงก์กลับหน้าแรกต้องเขียน href ว่าอะไร<br>ตอบ: <span id="a8">index.html</span></li>
+        <li>ใส่เบอร์โทรศัพท์ในหน้าเกี่ยวกับฉันได้หรือไม่ (ตอบ ได้ หรือ ไม่ได้)<br>ตอบ: <span id="a9">ไม่ได้</span></li>
+        <li>สร้าง site map ด้วย JavaScript ได้หรือไม่ (ตอบ ได้ หรือ ไม่ได้)<br>ตอบ: <span id="a10">ไม่ได้</span></li>
+    </ol>
+    </main>
+</body>
+</html>

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>หน้ารวมบทเรียน</title>
+    <style>
+        body {
+            font-family: 'Kanit', system-ui, -apple-system, sans-serif;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+            background: linear-gradient(180deg,#6bc8f1 0 34%,#78c879 34%,#4cae69 100%);
+            color: #18283b;
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 4px solid #ffd34e;
+        }
+        h1 {
+            margin: 0;
+            font-size: 1.75rem;
+        }
+        .repo-link {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background-color: #24292f;
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+        .repo-link:hover {
+            background-color: #3b434b;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 1.25rem;
+        }
+        .lesson-actions { display:flex; gap:8px; flex-wrap:wrap; }
+        .back-link { background:#ffd34e !important; color:#18283b !important; border:2px solid #17324d; }
+        .card {
+            background: #fffdf4;
+            border: 4px solid #17324d;
+            border-radius: 10px;
+            padding: 1.25rem;
+            box-shadow: 0 7px 0 rgba(23,50,77,.18);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .badge {
+            display: inline-block;
+            width: fit-content;
+            padding: 0.2rem 0.6rem;
+            background-color: #e0f2fe;
+            color: #0369a1;
+            border-radius: 999px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+        }
+        .card h2 {
+            margin: 0 0 0.5rem 0;
+            font-size: 1.15rem;
+        }
+        .card p {
+            margin: 0 0 1.25rem 0;
+            font-size: 0.9rem;
+            color: #64748b;
+        }
+        .card a {
+            display: inline-block;
+            text-align: center;
+            padding: 0.5rem 1rem;
+            background-color: #2563eb;
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+        .card a:hover {
+            background-color: #1d4ed8;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>หน้ารวมบทเรียน</h1>
+        <div class="lesson-actions">
+            <a class="repo-link back-link" href="ex1.html">← ก่อนหน้า</a>
+            <a class="repo-link back-link" href="../index.html">← หน้าหลัก</a>
+            <a class="repo-link back-link" href="ex3.html">ถัดไป →</a>
+            <!-- แก้ URL ด้านล่างให้ตรงกับลิงก์ GitHub repo จริงของคุณ -->
+            <a id="repo-link" class="repo-link" href="https://github.com/WaySpaceOrg/PHP_6802102147006" target="_blank">ดูโค้ดบน GitHub</a>
+        </div>
+    </header>
+
+    <main id="lesson-container" class="grid"></main>
+
+    <script>
+        // แก้ไขชื่อไฟล์ใน array ด้านล่างให้ตรงกับไฟล์จริงในโฟลเดอร์ Lesson1, Lesson2, Lesson3 ของคุณ
+        const lessons = [
+            {
+                folder: "Lesson1",
+                title: "บทที่ 1: แบบฝึกหัดที่ 1",
+                description: "พื้นฐานโครงสร้าง HTML5",
+                path: "Lesson1/ex1.html"
+            },
+            {
+                folder: "Lesson1",
+                title: "บทที่ 1: แบบฝึกหัดที่ 2",
+                description: "การจัดรูปแบบข้อความและลิงก์",
+                path: "Lesson1/ex2.html"
+            },
+            {
+                folder: "Lesson2",
+                title: "บทที่ 2: แบบฝึกหัดที่ 1",
+                description: "การสร้างฟอร์มและรับข้อมูล",
+                path: "Lesson2/ex1.html"
+            },
+            {
+                folder: "Lesson2",
+                title: "บทที่ 2: แบบฝึกหัดที่ 2",
+                description: "การใช้งานตารางและรายการ",
+                path: "Lesson2/ex2.html"
+            },
+            {
+                folder: "Lesson3",
+                title: "บทที่ 3: แบบฝึกหัดที่ 1",
+                description: "พื้นฐานการเขียน JavaScript",
+                path: "Lesson3/ex1.html"
+            },
+            {
+                folder: "Lesson3",
+                title: "บทที่ 3: แบบฝึกหัดที่ 2",
+                description: "การคำนวณและจัดการ DOM",
+                path: "Lesson3/ex2.html"
+            }
+        ];
+
+        const container = document.getElementById("lesson-container");
+
+        lessons.forEach(item => {
+            const card = document.createElement("article");
+            card.className = "card";
+            card.innerHTML = `
+                <div>
+                    <span class="badge">${item.folder}</span>
+                    <h2>${item.title}</h2>
+                    <p>${item.description}</p>
+                </div>
+                <a href="${item.path}">เปิดดูบทเรียน</a>
+            `;
+            container.appendChild(card);
+        });
+    </script>
+</body>
+</html>

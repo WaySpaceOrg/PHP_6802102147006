@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>หน้าแรก - Site Map</title>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root { --navy:#17324d; --ink:#18283b; --cream:#fffdf4; --gold:#ffd34e; }
+        * { box-sizing:border-box; } body { margin:0; min-height:100vh; font-family:'Kanit',sans-serif; color:var(--ink); background:linear-gradient(180deg,#6bc8f1 0 38%,#78c879 38%,#4cae69 100%); }
+        .topbar { background:rgba(23,50,77,.97); border-bottom:4px solid var(--gold); } .nav { max-width:850px; margin:auto; padding:12px 18px; display:flex; justify-content:space-between; align-items:center; gap:8px; flex-wrap:wrap; }
+        .back { background:var(--gold); color:var(--ink); border:3px solid var(--navy); border-radius:10px; box-shadow:0 4px 0 var(--navy); padding:8px 12px; text-decoration:none; font-weight:700; }
+        main { max-width:850px; margin:38px auto; padding:0 18px; } h1 { color:white; text-shadow:3px 4px 0 var(--navy); }
+        #sitemap { background:var(--cream); border:4px solid var(--navy); border-radius:16px; box-shadow:0 8px 0 rgba(23,50,77,.24); padding:18px 30px; } #sitemap ul { list-style:none; } #sitemap li { margin:6px 0; } #sitemap a { color:#1679c7; font-weight:600; text-decoration:none; } #sitemap a:hover { text-decoration:underline; }
+    </style>
+</head>
+<body>
+    <header class="topbar"><nav class="nav"><a class="back" href="ex5.html">← ก่อนหน้า</a><div><a class="back" href="../index.html">หน้าหลัก</a> <a class="back" href="ex7.html">ถัดไป →</a></div></nav></header>
+    <main>
+    <h1>แผนผังเว็บไซต์ (Site Map)</h1>
+
+    <nav id="sitemap">
+    <ul>
+    <li>
+     <a href="index.html">หน้าแรก</a>
+     <ul>
+     <li><a href="about.html">เกี่ยวกับฉัน</a></li>
+     <li>
+     Lesson 1
+     <ul>
+     <li><a href="Lesson1/ex1.html">แบบฝึกหัด 1.1</a></li>
+     <li><a href="Lesson1/ex2.html">แบบฝึกหัด 1.2</a></li>
+     </ul>
+     </li>
+     <li>
+      Lesson 2
+     <ul>
+     <li><a href="Lesson2/ex1.html">แบบฝึกหัด 2.1</a></li>
+     <li><a href="Lesson2/ex2.html">แบบฝึกหัด 2.2</a></li>
+     </ul>
+     </li>
+     <li>
+     Lesson 3
+     <ul>
+     <li><a href="Lesson3/ex1.html">แบบฝึกหัด 3.1</a></li>
+     <li><a href="Lesson3/ex2.html">แบบฝึกหัด 3.2</a></li>
+     </ul>
+     </li>
+     </ul>
+     </li>
+     </ul>
+    </nav>
+    </main>
+</body>
+</html>

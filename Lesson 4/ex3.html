@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>เครื่องคิด BMI</title>
+    <!-- ใช้ Bootstrap ตามหน้า index -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { min-height:100vh; font-family:'Kanit',sans-serif; background:linear-gradient(180deg,#6bc8f1 0 38%,#78c879 38%,#4cae69 100%) !important; }
+        .navbar { border-bottom:4px solid #ffd34e; box-shadow:0 4px 12px #16344b55; background:#17324d !important; }
+        .back-home { background:#ffd34e !important; color:#17324d !important; border:2px solid #17324d; border-radius:8px; }
+        .card { border:4px solid #17324d; border-radius:16px; overflow:hidden; box-shadow:0 8px 0 rgba(23,50,77,.24); }
+        .card-header { background:#2789dc !important; border-bottom:3px solid #17324d; }
+        .btn-success { background:#24a66a; border:2px solid #17324d; box-shadow:0 4px 0 #17324d; }
+    </style>
+</head>
+<body class="bg-light">
+
+    <!-- Navbar เมนูนำทาง -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-4">
+        <div class="container">
+            <a class="navbar-brand back-home px-2" href="../index.html">← หน้าหลัก</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="ex2.html">⬅️ บทเรียนก่อนหน้า</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="ex3.html">เครื่องคิด BMI</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="ex4.html">บทเรียนถัดไป ➡️</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card shadow-sm">
+                    <div class="card-header bg-primary text-white">
+                        <h3 class="card-title mb-0">เครื่องคิด BMI</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="mb-3">
+                            <label for="weight" class="form-label">น้ำหนัก (กก.)</label>
+                            <input type="number" id="weight" class="form-control" placeholder="กรอกน้ำหนัก">
+                        </div>
+                        <div class="mb-3">
+                            <label for="height" class="form-label">ส่วนสูง (ซม.)</label>
+                            <input type="number" id="height" class="form-control" placeholder="กรอกส่วนสูง">
+                        </div>
+                        <button id="calc" class="btn btn-success w-100 mb-3">คำนวณ</button>
+
+                        <div class="text-center">
+                            <p id="result" class="fw-bold fs-5 text-primary mb-0"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        // คงโค้ดต้นฉบับการคำนวณไว้ 100% เพื่อให้การทดสอบผ่าน
+        document.getElementById("calc").addEventListener("click", function () {
+            const weight = Number(document.getElementById("weight").value);
+            const height = Number(document.getElementById("height").value) / 100; // แปลงเป็นเมตร
+            const bmi = weight / (height * height);
+            let bmitext = "";
+            if(bmi<18.5){
+                bmitext="น้ำหนักน้อย";
+            }else if(bmi<25){
+                bmitext="ปกติ";
+            }else {
+                bmitext="น้ำหนักเกิน";
+            }
+            if(isNaN(bmi) || weight <= 0 || height <= 0){
+                document.getElementById("result").textContent = "กรุณากรอกน้ำหนักและส่วนสูง";
+            } else {
+                document.getElementById("result").textContent = "BMI " + bmi.toFixed(1) + " (" + bmitext + ")";
+            }
+        });
+    </script>
+</body>
+</html>

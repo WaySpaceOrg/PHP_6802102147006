@@ -13,68 +13,65 @@
     :root {
       --navy:#17324d; --ink:#18283b; --cream:#fffdf4; --red:#e94b4b;
       --blue:#2789dc; --green:#24a66a; --gold:#ffd34e; --line:#294761;
-      --shadow:0 7px 0 rgba(17,43,63,.22);
+      --shadow:0 8px 0 rgba(17,43,63,.23);
     }
     *{box-sizing:border-box}
     html{scroll-behavior:smooth}
-    body{margin:0;color:var(--ink);font-family:'Kanit',sans-serif;background:#8bd9ef;
-      background-image:linear-gradient(180deg,#6bc8f1 0,#b6e9f3 38%,#78c879 38%,#4cae69 100%);min-height:100vh}
+    body{margin:0;color:var(--ink);font-family:'Kanit',sans-serif;background:#74cfee;min-height:100vh;
+      background-image:radial-gradient(circle at 12% 18%,rgba(255,255,255,.7) 0 7px,transparent 8px),radial-gradient(circle at 88% 12%,rgba(255,255,255,.5) 0 5px,transparent 6px),linear-gradient(180deg,#69c6f0 0,#bdebf5 31%,#80cf72 31%,#45a95d 100%)}
+    body:before{content:"";position:fixed;inset:0;z-index:-1;opacity:.12;pointer-events:none;background-image:radial-gradient(circle,#17324d 2px,transparent 2px);background-size:28px 28px}
     a{color:inherit}
-    .topbar{position:sticky;top:0;z-index:10;background:rgba(20,45,68,.97);color:white;border-bottom:4px solid #f7c84a;box-shadow:0 4px 12px #16344b55}
-    .nav{max-width:1200px;margin:auto;padding:12px 22px;display:flex;align-items:center;justify-content:space-between;gap:18px}
-    .brand{display:flex;align-items:center;gap:12px;text-decoration:none;font-weight:700;font-size:clamp(16px,2.5vw,25px)}
-    .ball{width:42px;height:42px;border:3px solid #14283a;border-radius:50%;display:inline-grid;place-items:center;background:linear-gradient(#ed4d4d 0 46%,#192d40 46% 55%,#fff 55%);box-shadow:inset 0 0 0 3px #ffffff55;flex:none;font-size:19px}
-    .navlinks{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
-    .navlinks a{padding:8px 13px;border-radius:12px;text-decoration:none;font-weight:500}
-    .navlinks a:hover,.navlinks a:focus-visible{background:#ffffff20;outline:2px solid #65c8ff}
-    .hero{max-width:1200px;margin:0 auto;padding:48px 22px 26px;display:grid;grid-template-columns:1.05fr .95fr;align-items:center;gap:30px}
-    .eyebrow{display:inline-block;background:#fff4c7;border:2px solid #293f50;border-radius:8px;padding:6px 12px;font-weight:600;box-shadow:3px 3px 0 #293f50}
-    h1{font-size:clamp(32px,5vw,58px);line-height:1.12;margin:16px 0 10px;color:#fff;text-shadow:3px 4px 0 #214d73,5px 6px 0 #17324d}
-    .hero p{font-size:18px;color:#123c55;max-width:600px;margin:0 0 20px}
-    .hero-actions{display:flex;gap:12px;flex-wrap:wrap}
-    .btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:11px 18px;border:3px solid #213c52;border-radius:12px;text-decoration:none;font-weight:700;box-shadow:0 5px 0 #213c52;transition:transform .15s,box-shadow .15s}
+    .topbar{position:sticky;top:0;z-index:20;background:linear-gradient(90deg,#17324d,#214f70);color:white;border-bottom:5px solid #f7c84a;box-shadow:0 5px 18px #16344b55}
+    .nav{max-width:1200px;margin:auto;padding:11px 22px;display:flex;align-items:center;justify-content:space-between;gap:18px}
+    .brand{display:flex;align-items:center;gap:12px;text-decoration:none;font-weight:800;font-size:clamp(16px,2.5vw,25px)}
+    .ball{width:42px;height:42px;border:3px solid #14283a;border-radius:50%;display:inline-grid;place-items:center;background:linear-gradient(#ed4d4d 0 43%,#14283a 43% 58%,#fff 58%);box-shadow:inset 0 0 0 4px #ffffff55,0 3px 0 #0d2031;flex:none;font-size:0}
+    .navlinks{display:flex;align-items:center;gap:7px;flex-wrap:wrap}
+    .navlinks a{padding:8px 12px;border:2px solid transparent;border-radius:8px;text-decoration:none;font-weight:600}
+    .navlinks a:hover,.navlinks a:focus-visible{background:#fff;border-color:#17324d;color:#17324d;box-shadow:0 3px 0 #f7c84a;outline:none}
+    .hero{max-width:1200px;margin:0 auto;padding:48px 22px 28px;display:grid;grid-template-columns:1.05fr .95fr;align-items:center;gap:30px}
+    .eyebrow{display:inline-block;background:#fff4c7;border:3px solid #293f50;border-radius:6px;padding:7px 12px;font-family:'Press Start 2P',monospace;font-size:9px;line-height:1.7;box-shadow:4px 4px 0 #293f50}
+    h1{font-size:clamp(34px,5vw,60px);line-height:1.08;margin:18px 0 12px;color:#fff;text-shadow:4px 4px 0 #214d73,7px 7px 0 #17324d}
+    .hero p{font-size:18px;color:#123c55;max-width:600px;margin:0 0 22px;font-weight:500}
+    .hero-actions{display:flex;gap:14px;flex-wrap:wrap}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:12px 18px;border:3px solid #213c52;border-radius:10px;text-decoration:none;font-weight:800;box-shadow:0 5px 0 #213c52;transition:transform .15s,box-shadow .15s}
     .btn:hover{transform:translateY(3px);box-shadow:0 2px 0 #213c52}
     .btn-gold{background:var(--gold)}.btn-light{background:#fff}
-    .hero-art{min-height:260px;display:flex;align-items:center;justify-content:center;position:relative}
-    .hero-art:before{content:"";position:absolute;width:min(90%,390px);height:180px;bottom:15px;border:4px solid #28546a;border-radius:50%;background:#4bb86e;box-shadow:inset 0 -14px #32995d,0 8px 0 #214a5b}
-    .hero-art img{position:relative;z-index:1;width:clamp(105px,18vw,180px);height:auto;image-rendering:pixelated;filter:drop-shadow(4px 6px 0 #214a5b55)}
-    .hero-art img+img{margin-left:-26px;margin-top:45px}
+    .hero-art{min-height:280px;display:flex;align-items:center;justify-content:center;position:relative}
+    .hero-art:before{content:"";position:absolute;width:min(92%,420px);height:190px;bottom:8px;border:5px solid #28546a;border-radius:50%;background:repeating-linear-gradient(45deg,#57b96a 0 18px,#69c678 18px 36px);box-shadow:inset 0 -18px #32995d,0 10px 0 #214a5b}
+    .hero-art:after{content:"⚡";position:absolute;z-index:3;right:10%;top:8%;width:52px;height:52px;display:grid;place-items:center;border:3px solid #17324d;border-radius:50%;background:#ffd34e;font-size:28px;box-shadow:0 5px 0 #17324d}
+    .hero-art img{position:relative;z-index:2;width:clamp(110px,18vw,190px);height:auto;image-rendering:pixelated;filter:drop-shadow(5px 7px 0 #214a5b55)}
+    .hero-art img+img{margin-left:-38px;margin-top:48px}
     .repo-wrap{max-width:1200px;margin:0 auto;padding:10px 22px 28px}
-    .repo-panel{background:var(--cream);border:4px solid var(--line);border-radius:18px;padding:22px 26px;box-shadow:var(--shadow);display:grid;grid-template-columns:1fr auto;gap:18px;align-items:center}
+    .repo-panel{position:relative;background:var(--cream);border:4px solid var(--line);border-radius:12px;padding:22px 26px;box-shadow:var(--shadow);display:grid;grid-template-columns:1fr auto;gap:18px;align-items:center}
+    .repo-panel:before{content:"TRAINER CARD";position:absolute;right:18px;top:-15px;background:#17324d;color:#ffd34e;border:3px solid #17324d;padding:3px 8px;border-radius:5px;font-family:'Press Start 2P',monospace;font-size:8px}
     .section-title{font-size:24px;margin:0 0 14px}
     .repo-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px 24px}
-    .repo-item{display:flex;gap:10px;align-items:baseline}.repo-item strong{min-width:125px}
-    .repo-cta{white-space:nowrap}
+    .repo-item{display:flex;gap:10px;align-items:baseline}.repo-item strong{min-width:125px}.repo-cta{white-space:nowrap}
     .lessons{max-width:1200px;margin:0 auto;padding:8px 22px 55px}
-    .lessons-heading{text-align:center;color:#fff;text-shadow:2px 3px #214d73;margin:12px 0 22px}
-    .lessons-heading h2{font-size:clamp(26px,4vw,38px);margin:0}
-    .lessons-heading p{margin:5px 0 0;color:#173c53;text-shadow:none}
-    .lesson-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
-    .lesson-card{background:var(--cream);border:4px solid var(--line);border-radius:18px;overflow:hidden;box-shadow:var(--shadow);display:flex;flex-direction:column}
-    .card-head{padding:14px 16px;color:white;display:flex;align-items:center;gap:10px;border-bottom:4px solid var(--line)}
-    .card-head h3{margin:0;font-size:23px}.card-head .ball{width:34px;height:34px;font-size:15px}
-    .red .card-head{background:var(--red)}.blue .card-head{background:var(--blue)}.green .card-head{background:var(--green)}
-    .scene{height:145px;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;border-bottom:3px solid var(--line)}
-    .scene:before{content:"";position:absolute;inset:0;background:linear-gradient(165deg,#83d9f1 0 45%,#75c96c 45% 100%)}
-    .scene:after{content:"";position:absolute;width:140%;height:50px;bottom:7px;left:-20%;background:#e9c477;border:3px solid #8c7546;border-radius:50%;transform:rotate(-8deg)}
-    .scene img{position:relative;z-index:1;width:112px;height:112px;image-rendering:pixelated;filter:drop-shadow(3px 4px 0 #203b4a55)}
-    .scene .tree{position:absolute;z-index:1;font-size:34px;top:9px;left:14px}
-    .scene .tree.right{left:auto;right:15px;top:28px}
+    .lessons-heading{text-align:center;color:#fff;text-shadow:3px 4px #214d73;margin:12px 0 24px}
+    .lessons-heading h2{font-size:clamp(28px,4vw,40px);margin:6px 0 0}.lessons-heading p{margin:6px 0 0;color:#173c53;text-shadow:none;font-weight:600}
+    .lesson-grid{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:20px}
+    .lesson-card{grid-column:span 2;background:var(--cream);border:4px solid var(--line);border-radius:12px;overflow:hidden;box-shadow:var(--shadow);display:flex;flex-direction:column}
+    .lesson-card:nth-child(4),.lesson-card:nth-child(5){grid-column:span 3}
+    .card-head{position:relative;padding:14px 16px;color:white;display:flex;align-items:center;gap:10px;border-bottom:4px solid var(--line)}
+    .card-head:after{content:"LV.";margin-left:auto;border:2px solid #ffffff55;border-radius:5px;padding:3px 6px;font-family:'Press Start 2P',monospace;font-size:8px}
+    .card-head h3{margin:0;font-size:23px}.card-head .ball{width:34px;height:34px;font-size:0}
+    .red .card-head{background:#e94b4b}.blue .card-head{background:#2789dc}.green .card-head{background:#24a66a}
+    .scene{height:155px;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;border-bottom:3px solid var(--line)}
+    .scene:before{content:"";position:absolute;inset:0;background:linear-gradient(165deg,#75cef1 0 43%,#77c96c 43%,#55ad61 72%,#c5a45f 72%)}
+    .scene:after{content:"";position:absolute;width:150%;height:42px;bottom:-8px;left:-25%;background:repeating-linear-gradient(90deg,#9c8048 0 22px,#c3a45f 22px 44px);border-top:3px solid #80643a;transform:rotate(-5deg)}
+    .scene img{position:relative;z-index:2;width:118px;height:118px;image-rendering:pixelated;filter:drop-shadow(4px 5px 0 #203b4a55);transition:transform .18s}
+    .lesson-card:hover .scene img{transform:translateY(-5px) scale(1.06)}
+    .scene .tree{position:absolute;z-index:2;font-size:38px;top:8px;left:12px}.scene .tree.right{left:auto;right:12px;top:30px}
     .card-body{padding:15px 17px;display:flex;flex-direction:column;flex:1}
-    .card-meta{display:flex;justify-content:space-between;gap:8px;font-weight:600;margin-bottom:7px}
-    .card-body p{margin:0 0 14px;color:#4c5b67;min-height:52px}
-    .file-list{border-top:1px dashed #a9b7bd;padding-top:10px;margin-top:auto}
-    .file-list summary{cursor:pointer;font-weight:600;color:#244b67}
-    .file-links{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px;margin-top:9px}
-    .file-links a{font-size:14px;background:#edf5f8;padding:5px 8px;border-radius:7px;text-decoration:none}
-    .file-links a:hover{background:#d8edf7;text-decoration:underline}
-    .card-button{margin-top:13px;text-align:center;color:white;border:2px solid #203b50;border-radius:10px;padding:9px;text-decoration:none;font-weight:700;box-shadow:0 3px 0 #203b50}
+    .card-meta{display:flex;justify-content:space-between;gap:8px;font-weight:800;margin-bottom:7px}.card-body p{margin:0 0 14px;color:#4c5b67;min-height:52px}
+    .file-list{border-top:2px dashed #a9b7bd;padding-top:10px;margin-top:auto}.file-list summary{cursor:pointer;font-weight:800;color:#244b67}.file-links{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px;margin-top:9px}
+    .file-links a{font-size:14px;background:#edf5f8;border:1px solid #b6ccd7;padding:6px 8px;border-radius:6px;text-decoration:none}.file-links a:hover{background:#d8edf7;border-color:#2789dc}
+    .card-button{margin-top:13px;text-align:center;color:white;border:3px solid #203b50;border-radius:8px;padding:9px;text-decoration:none;font-weight:800;box-shadow:0 4px 0 #203b50}.card-button:hover{transform:translateY(2px);box-shadow:0 2px 0 #203b50}
     .red .card-button{background:#d83d4d}.blue .card-button{background:#1679c7}.green .card-button{background:#168b58}
-    footer{background:#17324d;color:#fff;text-align:center;padding:22px 15px;border-top:5px solid #f6c94d}
-    footer p{margin:4px}
-    .pixel-label{font-family:'Press Start 2P',monospace;font-size:10px;color:#ffe58b;letter-spacing:1px}
-    @media(max-width:850px){.hero{grid-template-columns:1fr;text-align:center;padding-top:34px}.hero p{margin-left:auto;margin-right:auto}.hero-actions{justify-content:center}.hero-art{min-height:200px}.repo-panel{grid-template-columns:1fr}.repo-cta{justify-self:start}.lesson-grid{grid-template-columns:1fr 1fr}}
-    @media(max-width:580px){.nav{align-items:flex-start;flex-direction:column}.navlinks{width:100%;justify-content:space-between}.navlinks a{padding:6px 8px;font-size:14px}.repo-grid{grid-template-columns:1fr}.repo-item strong{min-width:115px}.repo-panel{padding:17px}.lesson-grid{grid-template-columns:1fr}.scene{height:155px}.hero-art img{width:125px}}
+    footer{background:#17324d;color:#fff;text-align:center;padding:24px 15px;border-top:5px solid #f6c94d}footer p{margin:4px}.pixel-label{font-family:'Press Start 2P',monospace;font-size:10px;color:#ffe58b;letter-spacing:1px}
+    @media(max-width:850px){.hero{grid-template-columns:1fr;text-align:center;padding-top:34px}.hero p{margin-left:auto;margin-right:auto}.hero-actions{justify-content:center}.hero-art{min-height:220px}.repo-panel{grid-template-columns:1fr}.repo-cta{justify-self:start}.lesson-grid{grid-template-columns:1fr 1fr}.lesson-card,.lesson-card:nth-child(4),.lesson-card:nth-child(5){grid-column:span 1}}
+    @media(max-width:580px){.nav{align-items:flex-start;flex-direction:column}.navlinks{width:100%;justify-content:space-between}.navlinks a{padding:6px 7px;font-size:13px}.eyebrow{font-size:8px}.repo-grid{grid-template-columns:1fr}.repo-item strong{min-width:115px}.repo-panel{padding:17px}.lesson-grid{grid-template-columns:1fr}.lesson-card{grid-column:1!important}.scene{height:155px}.hero-art img{width:125px}.hero-art:after{right:2%}}
   </style>
 </head>
 <body>
@@ -117,7 +114,7 @@
             <div class="repo-item"><strong>📝 คำอธิบาย</strong><span>สำหรับเรียนเขียน Web และ PHP</span></div>
             <div class="repo-item"><strong>💻 ภาษาหลัก</strong><span>HTML</span></div>
             <div class="repo-item"><strong>🌿 Branch</strong><span>main</span></div>
-            <div class="repo-item"><strong>📚 บทเรียน</strong><span>4 Lessons · 20 Exercises</span></div>
+            <div class="repo-item"><strong>📚 บทเรียน</strong><span>5 Lessons · 27 Exercises</span></div>
           </div>
         </div>
         <a class="btn btn-gold repo-cta" href="https://github.com/WaySpaceOrg/PHP_6802102147006" target="_blank" rel="noopener noreferrer">🐙 ดูบน GitHub ↗</a>
@@ -127,12 +124,12 @@
     <section class="lessons" id="lessons" aria-labelledby="lessons-title">
       <div class="lessons-heading">
         <span class="pixel-label">CHOOSE YOUR LEVEL</span>
-        <h2 id="lessons-title">🧭 เลือกด่านที่ต้องการเรียน</h2>
+        <h2 id="lessons-title">🧭 เลือกด่าน Coding Adventure</h2>
         <p>เลือกบทเรียนเพื่อเปิดดูไฟล์แบบฝึกหัดทั้งหมดในแต่ละ Lesson</p>
       </div>
       <div class="lesson-grid">
         <article class="lesson-card red">
-          <div class="card-head"><span class="ball" aria-hidden="true">●</span><h3>Lesson 1</h3></div>
+          <div class="card-head"><span class="ball" aria-hidden="true"></span><h3>Lesson 1</h3></div>
           <div class="scene"><span class="tree">🌳</span><span class="tree right">🌲</span><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/4.png" alt="Charmander"></div>
           <div class="card-body">
             <div class="card-meta"><span>📁 Lesson1</span><span>4 ไฟล์</span></div>
@@ -146,7 +143,7 @@
         </article>
 
         <article class="lesson-card blue">
-          <div class="card-head"><span class="ball" aria-hidden="true">●</span><h3>Lesson 2</h3></div>
+          <div class="card-head"><span class="ball" aria-hidden="true"></span><h3>Lesson 2</h3></div>
           <div class="scene"><span class="tree">🌴</span><span class="tree right">🌳</span><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/7.png" alt="Squirtle"></div>
           <div class="card-body">
             <div class="card-meta"><span>📁 Lesson2</span><span>6 ไฟล์</span></div>
@@ -161,7 +158,7 @@
         </article>
 
         <article class="lesson-card green">
-          <div class="card-head"><span class="ball" aria-hidden="true">●</span><h3>Lesson 3</h3></div>
+          <div class="card-head"><span class="ball" aria-hidden="true"></span><h3>Lesson 3</h3></div>
           <div class="scene"><span class="tree">🌿</span><span class="tree right">🌲</span><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png" alt="Bulbasaur"></div>
           <div class="card-body">
             <div class="card-meta"><span>📁 Lesson3</span><span>5 ไฟล์</span></div>
@@ -175,8 +172,27 @@
           </div>
         </article>
 
+        <article class="lesson-card red">
+          <div class="card-head"><span class="ball" aria-hidden="true"></span><h3>Lesson 4</h3></div>
+          <div class="scene"><span class="tree">🌳</span><span class="tree right">🌲</span><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/133.png" alt="Eevee"></div>
+          <div class="card-body">
+            <div class="card-meta"><span>📁 Lesson 4</span><span>7 ไฟล์</span></div>
+            <p>ฝึกเชื่อมโยงความรู้ HTML, CSS และ JavaScript เพื่อสร้างหน้าเว็บที่ใช้งานได้</p>
+            <details class="file-list"><summary>ดูแบบฝึกหัดทั้งหมด</summary><div class="file-links">
+              <a href="Lesson%204/ex1.html">Exercise 1 ↗</a>
+              <a href="Lesson%204/ex2.html">Exercise 2 ↗</a>
+              <a href="Lesson%204/ex3.html">Exercise 3 ↗</a>
+              <a href="Lesson%204/ex4.html">Exercise 4 ↗</a>
+              <a href="Lesson%204/ex5.html">Exercise 5 ↗</a>
+              <a href="Lesson%204/ex6.html">Exercise 6 ↗</a>
+              <a href="Lesson%204/ex7.html">Exercise 7 ↗</a>
+            </div></details>
+            <a class="card-button" href="https://github.com/WaySpaceOrg/PHP_6802102147006/tree/main/Lesson%204" target="_blank" rel="noopener noreferrer">เข้าสู่ Lesson 4 →</a>
+          </div>
+        </article>
+
         <article class="lesson-card blue">
-          <div class="card-head"><span class="ball" aria-hidden="true">●</span><h3>Lesson 5</h3></div>
+          <div class="card-head"><span class="ball" aria-hidden="true"></span><h3>Lesson 5</h3></div>
           <div class="scene"><span class="tree">🌴</span><span class="tree right">🌳</span><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png" alt="Pikachu"></div>
           <div class="card-body">
             <div class="card-meta"><span>📁 Lesson5</span><span>5 ไฟล์</span></div>
